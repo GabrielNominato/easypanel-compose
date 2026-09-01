@@ -276,6 +276,10 @@ services:
   realtime:
     # This container name looks inconsistent but is correct because realtime constructs tenant id by parsing the subdomain
     image: supabase/realtime:v2.76.5
+    networks:
+      default:
+        aliases:
+          - realtime-dev.supabase-realtime
     restart: unless-stopped
     depends_on:
       db:
